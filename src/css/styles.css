@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*padding and border are included in the width and height*/
+} /* CSS reset: This is important because browsers have different defaul margins which causes elements to look different.'*' means all elements.*/
+
+body {
+  overflow: hidden;/* overflow is clipped*/
+  background: black;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
