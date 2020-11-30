@@ -38,6 +38,7 @@ _4.) Buy Amazon button the cuts to partying with Tom Haverford._
 - _ebezjian@gmail.com_
 - _gman9mm@live.com_
 - _kaila.sprague@icloud.com_
+- _taylulzcode@gmail.com_
 
 ## Technologies and tools used
 
