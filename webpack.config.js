@@ -39,10 +39,6 @@ module.exports = {
           },
         ],
       },
-<<<<<<< HEAD
-
-=======
->>>>>>> dac8e3f4bf3a232c7dfdb8508eb4e1b6c42b2e19
       {
         test: /\.html$/,
         use: ["html-loader"],
