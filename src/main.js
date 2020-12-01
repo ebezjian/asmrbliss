@@ -3,7 +3,13 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+
 import GetSlime from './assets/audio/baseSlime.mp3';
+=======
+
+$(document).on('mouseover', '.container .column', function(){
+  $(this).addClass('active').siblings().removeClass('active');
+});
 
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');

@@ -16,8 +16,13 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "ASMR Bliss",
+      filename: "index.html",
       template: "./src/index.html",
       inject: "body",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "slime.html",
+      template: "./src/slime.html",
     }),
   ],
   module: {
@@ -34,6 +39,7 @@ module.exports = {
           },
         ],
       },
+
       {
         test: /\.mp3$/,
         loader: 'file-loader',
@@ -42,6 +48,8 @@ module.exports = {
           outputPath: 'assets/audio/'
         }
       },
+=======
+
       {
         test: /\.html$/,
         use: ["html-loader"],
