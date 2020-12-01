@@ -1,5 +1,4 @@
 const path = require("path");
-const SRC = path.resolve(__dirname, 'node_modules');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
@@ -35,7 +34,14 @@ module.exports = {
           },
         ],
       },
-
+      {
+        test: /\.mp3$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'assets/audio/'
+        }
+      },
       {
         test: /\.html$/,
         use: ["html-loader"],
@@ -43,19 +49,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.mp3$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              outputPath: "assets/audio/",
-              publicPath: 'assets/audio/'
-            }
-          }
-        ]
       },
       {
         test: /\.js$/,

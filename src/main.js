@@ -3,26 +3,25 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import './assets/audio/baseSlime.mp3';
-import GetSlime from './js/audio.js';
+import GetSlime from './assets/audio/baseSlime.mp3';
 
-
-const baseSlime = document.getElementById("baseSlime");
-const audioCtx = new AudioContext();
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let particleArray = [];
 
-// function play() {
-//   const audio = audioCtx.createMediaElementSource(audioLibrary);
-//   audioLibrary.play();
-// }
+let isMoving = false;
+let x = 0;
+let y = 0;
 
-// $('#canvas1').click(function () {
-//   play();
-// });
+
+
+$('#canvas1').mousedown(function () {
+  let audio = new Audio(GetSlime);
+  audio.play();
+});
+
 
 //HANDLE MOUSE
 const mouse = {
@@ -31,7 +30,9 @@ const mouse = {
   radius: 100
 }
 
-window.addEventListener('mousemove', function (event) {
+
+// if('mousedown' === true){
+document.addEventListener('mousedown', function (event) {
   mouse.x = event.x;
   mouse.y = event.y;
 });
