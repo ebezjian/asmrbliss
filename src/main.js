@@ -20,9 +20,9 @@ let isMoving = false;
 let x = 0;
 let y = 0;
 let audio = new Audio(GetSlime);
-console.log(isMoving);
+console.log(x);
+console.log(y);
 
-//HANDLE MOUSE
 const mouse = {
   x: null,
   y: null,
@@ -54,16 +54,6 @@ window.addEventListener('mouseup', function(event){
   }
 });
 
-//TODO: DRAW TEXT ON CANVAS
-ctx.fillStyle = 'white'; // text will be back unless you set
-ctx.font = '30px Verdana'; //size, font-fmaily
-ctx.fillText('A', 0, 30); //text we want to write, x coordinate, y coordinate, max width of pixels
-
-//ctx.strokeStyle = 'white'; // White line for box
-//ctx.strokeRect(0, 0, 100, 100); //same coordinates as getImageData to see what we are scanning
-
-const data = ctx.getImageData(0, 0, 100, 100); //canvas method to scan portion of canvas to get image data (coordinates to start at top left corner= '0, 0' 'width, height' in pixels)
-
 class Particle {
   constructor(x, y) {
     this.x = x;
@@ -83,9 +73,9 @@ class Particle {
   }
 
   update() {
-    let dx = mouse.x - this.x; //difference x
-    let dy = mouse.y - this.y; //difference y
-    let distance = Math.sqrt(dx * dx + dy * dy); //pythagorean theorem finding distance betwwen 2 points
+    let dx = mouse.x - this.x; 
+    let dy = mouse.y - this.y; 
+    let distance = Math.sqrt(dx * dx + dy * dy); 
     let forceDirectionX = dx / distance;
     let forceDirectionY = dy / distance;
     let maxDistance = mouse.radius;
@@ -111,16 +101,6 @@ class Particle {
 }
 function init() {
   particleArray = [];
-  // for (let y =0 , y2 = data.height; y < y2; y++){
-  //   for (let x = 0, x2 = data.width; x < x2; x++){
-  //     if (data.data[(y * 4 * data.width) * (x * 4) + 3] > 128){
-  //       let positionX = x;
-  //       let positionY = y;
-  //       particleArray.push(new Particle(positionX * 20, positionY * 20));
-  //     }
-  //   }
-  // }
-
   for (let i = 0; i < 5000; i++) {
     let x = Math.random() * canvas.width;
     let y = Math.random() * canvas.height;
@@ -131,7 +111,6 @@ function init() {
 }
 
 init();
-// console.log(particleArray);
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
