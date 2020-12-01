@@ -4,6 +4,8 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
+import GetSlime from './assets/audio/baseSlime.mp3';
+
 $(document).on('mouseover', '.container .column', function(){
   $(this).addClass('active').siblings().removeClass('active');
 });
@@ -14,16 +16,42 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let particleArray = [];
 
+let isMoving = false;
+let x = 0;
+let y = 0;
+let audio = new Audio(GetSlime);
+console.log(isMoving);
+
 //HANDLE MOUSE
 const mouse = {
-  x: null, 
-  y: null, 
-  radius: 100 
+  x: null,
+  y: null,
+  radius: 50
 }
 
-window.addEventListener('mousemove', function(event){
-  mouse.x = event.x;
-  mouse.y = event.y;
+canvas.addEventListener('mousedown', function(event){
+  x = event.offsetX;
+  y = event.offsetY;
+  isMoving = true;
+});
+
+canvas.addEventListener('mousemove', function (event) {
+  if (isMoving == true) {
+    animate();
+    audio.play();
+    mouse.x = event.x;
+    mouse.y = event.y;
+  }
+});
+
+window.addEventListener('mouseup', function(event){
+  if (isMoving === true) {
+    animate();
+    audio.pause();
+    x = 0;
+    y = 0;
+    isMoving = false;
+  }
 });
 
 //TODO: DRAW TEXT ON CANVAS
@@ -37,22 +65,24 @@ ctx.fillText('A', 0, 30); //text we want to write, x coordinate, y coordinate, m
 const data = ctx.getImageData(0, 0, 100, 100); //canvas method to scan portion of canvas to get image data (coordinates to start at top left corner= '0, 0' 'width, height' in pixels)
 
 class Particle {
-  constructor(x,y) {
+  constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.size = 3; 
+    this.size = 3;
     this.baseX = this.x;
     this.baseY = this.y;
-    this.density = (Math.random()* 40) + 5;
+    this.density = (Math.random() * 40) + 5;
   }
-  draw(){
+  
+  draw() {
     ctx.fillStyle = 'teal';
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI *2);
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
     ctx.fill();
   }
-update() {
+
+  update() {
     let dx = mouse.x - this.x; //difference x
     let dy = mouse.y - this.y; //difference y
     let distance = Math.sqrt(dx * dx + dy * dy); //pythagorean theorem finding distance betwwen 2 points
@@ -66,20 +96,20 @@ update() {
     if (distance < mouse.radius) {
       this.x -= directionX;
       this.y -= directionY;
-  
+
     } else {
       if (this.x !== this.baseX) {
         let dx = this.x - this.baseX;
-        this.x -= dx/10;
+        this.x -= dx / 10;
       }
-      if (this.y !== this.basey){
+      if (this.y !== this.basey) {
         let dy = this.y - this.baseY;
-        this.y -= dy/10;
-      } 
+        this.y -= dy / 10;
+      }
     }
   }
 }
-function init(){
+function init() {
   particleArray = [];
   // for (let y =0 , y2 = data.height; y < y2; y++){
   //   for (let x = 0, x2 = data.width; x < x2; x++){
@@ -91,21 +121,21 @@ function init(){
   //   }
   // }
 
-  for (let i = 0; i < 10000; i++){
+  for (let i = 0; i < 5000; i++) {
     let x = Math.random() * canvas.width;
     let y = Math.random() * canvas.height;
     particleArray.push(new Particle(x, y));
   }
-  particleArray.push(new Particle(50,50));
+  particleArray.push(new Particle(50, 50));
   particleArray.push(new Particle(80, 50));
 }
 
 init();
 // console.log(particleArray);
 
-function animate(){
-  ctx.clearRect(0,0, canvas.width, canvas.height);
-  for (let i=0; i < particleArray.length; i++){
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < particleArray.length; i++) {
     particleArray[i].draw();
     particleArray[i].update();
   }
