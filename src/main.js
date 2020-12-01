@@ -4,6 +4,10 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import './css/styles.css';
 
+$(document).on('mouseover', '.container .column', function(){
+  $(this).addClass('active').siblings().removeClass('active');
+});
+
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
