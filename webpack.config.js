@@ -16,12 +16,33 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "ASMR Bliss",
+      filename: "index.html",
       template: "./src/index.html",
       inject: "body",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "slime.html",
+      template: "./src/slime.html",
     }),
   ],
   module: {
     rules: [
+      {
+        test: /\.(gif|png|jpe?g)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "assets/images/",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.html$/,
+        use: ["html-loader"],
+      },
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],

@@ -111,3 +111,8 @@ body {
   background-position: center;
   transition: 0.5s;
 }
+
+.container #navbar {
+  display: flex;
+  justify-content: left;
+}
