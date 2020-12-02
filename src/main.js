@@ -4,7 +4,17 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
-import GetSlime from './assets/audio/baseSlime.mp3';
+// import audio
+import baseSlime from './assets/audio/baseSlime.mp3';
+import baseSlime2 from './assets/audio/baseSlime2.mp3';
+import slime1 from './assets/audio/slime1.mp3';
+import slime2 from './assets/audio/slime2.mp3';
+import slime3 from './assets/audio/slime3.mp3';
+import slime4 from './assets/audio/slime4.mp3';
+import slime5 from './assets/audio/slime5.mp3';
+import slime6 from './assets/audio/slime6.mp3';
+import slime7 from './assets/audio/slime7.mp3';
+
 //nav bar
 $('#mainPage').on( "click", function() {
   window.location.href ="index.html";
@@ -38,10 +48,20 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let particleArray = [];
 
+let audio = new Audio(baseSlime);
+let audio0 = new Audio(baseSlime2);
+let audio1 = new Audio(slime1);
+let audio2 = new Audio(slime2);
+let audio3 = new Audio(slime3);
+let audio4 = new Audio(slime4);
+let audio5 = new Audio(slime5);
+let audio6 = new Audio(slime6);
+let audio7 = new Audio(slime7);
+let audioArray = [audio1, audio2, audio3, audio4, audio5, audio5, audio7];
+
 let isMoving = false;
 let x = 0;
 let y = 0;
-let audio = new Audio(GetSlime);
 console.log(x);
 console.log(y);
 
@@ -55,7 +75,7 @@ canvas.addEventListener('mousedown', function(event){
   x = event.offsetX;
   y = event.offsetY;
   isMoving = true;
-  audio.play();
+  audio0.play();
 });
 
 canvas.addEventListener('mousemove', function (event) {
@@ -64,6 +84,8 @@ canvas.addEventListener('mousemove', function (event) {
     animate();
     mouse.x = event.x;
     mouse.y = event.y;
+    let rando = Math.floor(Math.random() * Math.floor(7));
+    audioArray[rando].play();
   }
 });
 
@@ -74,6 +96,7 @@ window.addEventListener('mouseup', function(event){
     x = 0;
     y = 0;
     isMoving = false;
+    audio0.pause();
   }
 });
 
