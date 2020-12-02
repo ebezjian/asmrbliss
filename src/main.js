@@ -29,10 +29,9 @@ $('#slimePages').on( "click", function() {
 //main page
 $(document).on('mouseover', '.container .column', function(){
   $(this).addClass('active').siblings().removeClass('active');
-
-  
 });
 
+//slime stuff
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
