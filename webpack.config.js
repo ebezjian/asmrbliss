@@ -24,6 +24,18 @@ module.exports = {
       filename: "slime.html",
       template: "./src/slime.html",
     }),
+    new HtmlWebpackPlugin({
+      filename: "rain.html",
+      template: "./src/rain.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "aboutUs.html",
+      template: "./src/aboutUs.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "mukbang.html",
+      template: "./src/mukbang.html",
+    }),
   ],
   module: {
     rules: [
