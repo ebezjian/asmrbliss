@@ -26,19 +26,20 @@ console.log(y);
 const mouse = {
   x: null,
   y: null,
-  radius: 50
+  radius: 100
 }
 
 canvas.addEventListener('mousedown', function(event){
   x = event.offsetX;
   y = event.offsetY;
   isMoving = true;
+  audio.play();
 });
 
 canvas.addEventListener('mousemove', function (event) {
   if (isMoving == true) {
+    requestAnimationFrame(animate);
     animate();
-    audio.play();
     mouse.x = event.x;
     mouse.y = event.y;
   }
