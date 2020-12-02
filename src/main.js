@@ -1,4 +1,3 @@
-/* eslint-disable */
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,26 +14,13 @@ import slime5 from './assets/audio/slime5.mp3';
 import slime6 from './assets/audio/slime6.mp3';
 import slime7 from './assets/audio/slime7.mp3';
 
+
 //nav bar
 $('#mainPage').on( "click", function() {
   window.location.href ="index.html";
 });
 
-$('#aboutPage').on( "click", function() {
-  window.location.href ="aboutUs.html";
-});
 
-$('#mukbangPage').on( "click", function() {
-  window.location.href ="mukbang.html";
-});
-
-$('#mukbangPage').on( "click", function() {
-  window.location.href ="mukbang.html";
-});
-
-$('#slimePages').on( "click", function() {
-  window.location.href ="slime.html";
-});
 
 //main page
 $(document).on('mouseover', '.container .column', function(){
@@ -42,8 +28,12 @@ $(document).on('mouseover', '.container .column', function(){
 });
 
 //slime stuff
+
 const canvas = document.getElementById('canvas1');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let particleArray = [];
@@ -68,8 +58,8 @@ console.log(y);
 const mouse = {
   x: null,
   y: null,
-  radius: 50
-}
+  radius: 50,
+};
 
 canvas.addEventListener('mousedown', function(event){
   x = event.offsetX;
@@ -89,7 +79,7 @@ canvas.addEventListener('mousemove', function (event) {
   }
 });
 
-window.addEventListener('mouseup', function(event){
+window.addEventListener('mouseup', function(){
   if (isMoving === true) {
     animate();
     audio.pause();
@@ -166,11 +156,12 @@ function animate() {
 animate();
 
 //Rain
-let c = document.getElementById("canvas");
-c.width = window.innerWidth
-c.height = window.innerHeight
-let ctxR = c.getContext("2d");
+let cR = document.getElementById("canvas");
+cR.width = window.innerWidth;
+cR.height = window.innerHeight;
+let ctxR = cR.getContext("2d");
 let vRain = [];
+console.log('canvas');
 
 class Rain {
   constructor(x, y, l, v) { // coordinates, length, velocity.
@@ -192,8 +183,8 @@ class Rain {
     this.y += this.v;
 
     //recreate if droplet hits the ground
-    if (this.y > c.height) {
-      this.x = Math.floor(Math.random() * c.width) + 5;
+    if (this.y > cR.height) {
+      this.x = Math.floor(Math.random() * cR.width) + 5;
       this.y = Math.floor(Math.random() * 100) - 100;
       this.l = Math.floor(Math.random() * 30) + 1;
       this.v = Math.floor(Math.random() * 12) + 4;
@@ -203,7 +194,7 @@ class Rain {
 }
 function loop() {
 
-  ctx.clearRect(0, 0, c.width, c.height);
+  ctxR.clearRect(0, 0, cR.width, cR.height);
 
   for (var i = 0; i < vRain.length; i++) {
     vRain[i].show();
@@ -214,7 +205,7 @@ function setup() {
 
   for (var i = 0; i < 60; i++) {
     vRain[i] = new Rain(
-      Math.floor(Math.random() * c.width) + 5,
+      Math.floor(Math.random() * cR.width) + 5,
       Math.floor(Math.random() * 100) - 100,
       Math.floor(Math.random() * 30) + 1,
       Math.floor(Math.random() * 12) + 4,
@@ -222,3 +213,4 @@ function setup() {
   }
   setInterval(loop, 10);
 }
+setup();
