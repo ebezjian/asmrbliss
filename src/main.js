@@ -57,7 +57,7 @@ let audio4 = new Audio(slime4);
 let audio5 = new Audio(slime5);
 let audio6 = new Audio(slime6);
 let audio7 = new Audio(slime7);
-let audioArray = [audio1, audio2, audio3, audio4, audio5, audio5, audio7];
+let audioArray = [audio1, audio2, audio3, audio4, audio5, audio6, audio7];
 
 let isMoving = false;
 let x = 0;
