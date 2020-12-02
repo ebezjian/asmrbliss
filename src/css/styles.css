@@ -4,6 +4,8 @@
   box-sizing: border-box; /*padding and border are included in the width and height*/
 } /* CSS reset: This is important because browsers have different defaul margins which causes elements to look different.'*' means all elements.*/
 
+/* slime page stuff */
+
 body#slimePage {
   overflow: hidden;/* overflow is clipped*/
   background: lightblue
