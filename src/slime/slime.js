@@ -29,8 +29,6 @@ let audioArray = [audio1, audio2, audio3, audio4, audio5, audio6, audio7];
 let isMoving = false;
 let x = 0;
 let y = 0;
-console.log(x);
-console.log(y);
 
 const mouse = {
   x: null,
@@ -67,9 +65,9 @@ window.addEventListener('mouseup', function () {
   }
 });
 
-ctx.fillStyle = 'white'; // text will be back unless you set
-ctx.font = '30px Verdana'; //size, font-fmaily
-ctx.fillText('A', 0, 30); //text we want to write, x coordinate, y coordinate, max width of pixels
+// ctx.fillStyle = 'white'; // text will be back unless you set
+// ctx.font = '30px Verdana'; //size, font-fmaily
+// ctx.fillText('A', 0, 30); //text we want to write, x coordinate, y coordinate, max width of pixels
 
 //ctx.strokeStyle = 'white'; // White line for box
 //ctx.strokeRect(0, 0, 100, 100); //same coordinates as getImageData to see what we are scanning

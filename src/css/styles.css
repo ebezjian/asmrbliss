@@ -13,7 +13,6 @@ body#slimePage {
 
 body#rain {
   background: black;
-  
 }
 
 canvas {
@@ -392,28 +391,32 @@ body#rainPages {
   background-image: url(../assets/images/ellie.jpg);
 }
 
-.person:nth-child(2) .poster {
-  background-image: url(../assets/images/kailajpg);
+.poster#kailapic{
+  background-image: url(../assets/images/kaila.jpg);
 }
 
-.person:nth-child(3) .poster {
+ .poster#taylorpic {
   background-image: url(../assets/images/taylor.jpg);
 }
 
-.person:nth-child(4) .poster {
+.poster#garrettpic {
   background-image: url(../assets/images/garret.jpg);
 }
 
 .person:nth-child(1) .info header {
-  background-image: url(../assets/images/still01.jpg);
+  background-image: url(https://media1.tenor.com/images/5c0a99d5899a94768ec221362725845a/tenor.gif?itemid=9906666);
 }
 
-.person:nth-child(2) .info header {
-  background-image: url(../img/still02.jpg);
+.info#kailagif header {
+  background-image: url(https://media.tenor.com/images/76637b89d35e1d9c27efefba47481173/tenor.gif);
 }
 
-.person:nth-child(3) .info header {
-  background-image: url(../img/still03.jpg);
+.info#taylorgif header {
+  background-image: url(https://media1.tenor.com/images/f7761848d0618d2417bd1ec4619dd88d/tenor.gif?itemid=4050330);
+}
+
+ .info#garrettgif header {
+  background-image: url(https://media1.tenor.com/images/ad05da2f03944b9b550267a3656f6874/tenor.gif?itemid=15287954);
 }
 /* mukbang stuff */
 

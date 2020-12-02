@@ -1,11 +1,12 @@
-// import rain from "../assets/audio/rain.mp3"
+import rain from "../assets/audio/rain.mp3"
 
 let c = document.getElementById("canvas");
 c.width = window.innerWidth;
 c.height = window.innerHeight;
 let ctx = c.getContext("2d");
 let vRain = [];
-// let audio = new Audio(rain)
+let audio = new Audio(rain);
+audio.loop = true;
 
 // let audio = window.onload = function() {
 //   document.getElementById("").play();
@@ -62,3 +63,4 @@ function setup() {
   setInterval(loop, 10);
 }
 setup();
+audio.play();
