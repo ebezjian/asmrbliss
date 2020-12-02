@@ -5,11 +5,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
 import GetSlime from './assets/audio/baseSlime.mp3';
+//nav bar
+$('#mainPage').on( "click", function() {
+  window.location.href ="index.html";
+});
 
+$('#aboutPage').on( "click", function() {
+  window.location.href ="aboutUs.html";
+});
+
+$('#mukbangPage').on( "click", function() {
+  window.location.href ="mukbang.html";
+});
+
+$('#mukbangPage').on( "click", function() {
+  window.location.href ="mukbang.html";
+});
+
+$('#slimePages').on( "click", function() {
+  window.location.href ="slime.html";
+});
+
+//main page
 $(document).on('mouseover', '.container .column', function(){
   $(this).addClass('active').siblings().removeClass('active');
 });
 
+//slime stuff
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
