@@ -1,8 +1,15 @@
+// import rain from "../assets/audio/rain.mp3"
+
 let c = document.getElementById("canvas");
 c.width = window.innerWidth;
 c.height = window.innerHeight;
 let ctx = c.getContext("2d");
 let vRain = [];
+// let audio = new Audio(rain)
+
+// let audio = window.onload = function() {
+//   document.getElementById("").play();
+// }
 
 class Rain {
   constructor(x, y, v, l,) { // coordinates, length, velocity.
