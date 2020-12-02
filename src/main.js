@@ -48,7 +48,7 @@ console.log(y);
 const mouse = {
   x: null,
   y: null,
-  radius: 100
+  radius: 50
 }
 
 canvas.addEventListener('mousedown', function(event){
@@ -124,13 +124,11 @@ class Particle {
 }
 function init() {
   particleArray = [];
-  for (let i = 0; i < 5000; i++) {
+  for (let i = 0; i < 10000; i++) {
     let x = Math.random() * canvas.width;
     let y = Math.random() * canvas.height;
     particleArray.push(new Particle(x, y));
   }
-  particleArray.push(new Particle(50, 50));
-  particleArray.push(new Particle(80, 50));
 }
 
 init();
@@ -141,6 +139,5 @@ function animate() {
     particleArray[i].draw();
     particleArray[i].update();
   }
-  requestAnimationFrame(animate);
 }
 animate();
