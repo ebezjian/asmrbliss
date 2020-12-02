@@ -8,7 +8,11 @@
 
 body#slimePage {
   overflow: hidden;/* overflow is clipped*/
-  background: lightblue
+  background: lightblue;
+}
+
+body#rain {
+  background: black;
   
 }
 

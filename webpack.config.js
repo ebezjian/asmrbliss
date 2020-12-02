@@ -3,9 +3,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: {
+    main: "./src/main.js",
+    slime: "./src/slime/slime.js",
+    rain: "./src/rain/rain.js"
+  },
   output: {
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   devtool: "eval-source-map",
@@ -22,10 +26,11 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "slime.html",
-      template: "./src/slime.html",
+      template: "./src/slime/slime.html",
     }),
     new HtmlWebpackPlugin({
       filename: "rain.html",
+<<<<<<< HEAD
       template: "./src/rain.html",
     }),
     new HtmlWebpackPlugin({
@@ -36,6 +41,10 @@ module.exports = {
       filename: "mukbang.html",
       template: "./src/mukbang.html",
     }),
+=======
+      template: "./src/rain/rain.html",
+    })
+>>>>>>> 740efb405cf6112954b5c48de27ec3fdc226454b
   ],
   module: {
     rules: [

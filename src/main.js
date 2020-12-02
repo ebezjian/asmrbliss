@@ -3,6 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
+<<<<<<< HEAD
 // import audio
 import baseSlime from './assets/audio/baseSlime.mp3';
 import baseSlime2 from './assets/audio/baseSlime2.mp3';
@@ -15,16 +16,37 @@ import slime6 from './assets/audio/slime6.mp3';
 import slime7 from './assets/audio/slime7.mp3';
 
 
+=======
+>>>>>>> 740efb405cf6112954b5c48de27ec3fdc226454b
 //nav bar
-$('#mainPage').on( "click", function() {
-  window.location.href ="index.html";
+$('#mainPage').on("click", function () {
+  window.location.href = "index.html";
 });
 
+<<<<<<< HEAD
 
+=======
+$('#aboutPage').on("click", function () {
+  window.location.href = "aboutUs.html";
+});
+
+$('#mukbangPage').on("click", function () {
+  window.location.href = "mukbang.html";
+});
+
+$('#mukbangPage').on("click", function () {
+  window.location.href = "mukbang.html";
+});
+
+$('#slimePages').on("click", function () {
+  window.location.href = "slime.html";
+});
+>>>>>>> 740efb405cf6112954b5c48de27ec3fdc226454b
 
 //main page
-$(document).on('mouseover', '.container .column', function(){
+$(document).on('mouseover', '.container .column', function () {
   $(this).addClass('active').siblings().removeClass('active');
+<<<<<<< HEAD
 });
 
 //slime stuff
@@ -214,3 +236,6 @@ function setup() {
   setInterval(loop, 10);
 }
 setup();
+=======
+});
+>>>>>>> 740efb405cf6112954b5c48de27ec3fdc226454b
