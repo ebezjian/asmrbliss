@@ -6,21 +6,22 @@
 
 body#slimePage {
   overflow: hidden;/* overflow is clipped*/
-  background: black;
+  background: lightblue
+  
 }
 
 canvas {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 5%;
 }
+
+
 
 body {
   margin: 0;
   padding: 0;
-
-  font-family: sans-serif;
-  /* background: #000; */
+  font-family: sans-serif;  
 }
 
 .container {
@@ -129,7 +130,149 @@ body {
   transition: 0.5s;
 }
 
-.container #navbar {
-  display: flex;
-  justify-content: left;
+*,*:before,*:after {
+	box-sizing: border-box;
 }
+
+:after {
+	content: "";
+}
+
+section {
+  position: relative;
+  left: 100px;
+}
+
+
+
+
+
+nav {
+  float: left;
+	position: relative;
+	top: 0;
+  left: 0;
+	background: transparent;
+}
+
+nav ul {
+	text-align: center;
+}
+
+nav ul li {
+	position: relative;
+  width: 70px;
+  cursor: pointer;
+	background: crimson;
+	text-transform: uppercase;
+	transition:all .4s ease-out;
+}
+
+nav ul li:after {
+	position: absolute;
+	background: white;
+	color: crimson;
+	top:0;
+	left: 70px;
+	width: 80px; height: 100%;
+  opacity:.5;
+  transform: perspective(400px) rotateY(90deg);
+	transform-origin: 0 100%;
+	transition:all .4s ease-out;
+}
+
+nav ul li:nth-child(1):after { 
+	content: "Home";
+	line-height: 88px;
+}
+nav ul li:nth-child(2):after { 
+	content: "About";
+	line-height: 88px;
+}
+nav ul li:nth-child(3):after { 
+	content: "Mukbang";
+	line-height: 82px;
+}
+nav ul li:nth-child(4):after { 
+	content: "Rain";
+	line-height: 70px;
+}
+
+nav ul li:hover {
+	transform: translateX(-70px);
+}
+
+nav ul li:hover:after {
+  opacity: 1;
+	transform: perspective(400px) rotateY(0deg) scale(1) ;
+}
+
+
+nav ul li > div {
+	display: inline-block;
+	padding: 25px 0;
+	background: transparent;
+}
+
+nav ul li div { position: relative; }
+
+.roof {
+	width: 0;
+	height: 0;
+	top:2px;
+	border-style: solid;
+	border-width: 0 21px 15px 21px;
+	border-color: transparent transparent #ffffff transparent;
+}
+
+.roof-edge {
+	position: absolute;
+	z-index: 20;
+	left: -17px;
+	top: 3px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 17px 12px 17px;
+	border-color: transparent transparent crimson transparent;
+}
+/*white triangle over red triangle*/
+.roof-edge:after {
+	position: absolute;
+	left: -14.5px;
+	top: 3px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 14.5px 10px 14.5px;
+	border-color: transparent transparent white transparent;
+}
+
+.front {
+	position: relative;
+	top: 3px;
+	width: 28.5px;
+	height: 20px;
+	margin: 0 auto;
+	background: white;
+}
+/*door*/
+.front:after {
+	position: absolute;
+	background: crimson;
+	width: 11px;
+	height: 13px;
+	bottom: 0;
+	left:9px;
+}
+
+/*/// About me ////*/
+
+#aboutMe, #mukbang, #rain {
+  font-size: 40px;
+  color:whitesmoke;
+}
+
+
+
+
