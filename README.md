@@ -6,7 +6,7 @@
 
 ## Description
 
-![Home Page](./assets/images/homepage.gif)
+![Home Page](https://media.giphy.com/media/htTOGrkU6FpYbW4LqS/giphy.gif)
 
 _This is our project for Epicodus' final week of Javascript: Team Week. The goal with this project is to have a page with a slime theme that allows the user to click on it and cause relaxing slime sounds to play as well as show an animation for the movement of the slime, with other themes possibly in the workings._
 
