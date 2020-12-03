@@ -10,8 +10,11 @@ body#slimePage {
   background: lightblue;
 }
 
-body#rain {
-  background: black;
+body#rainPages {
+  background: url(https://i.imgur.com/xIUMluz.gif);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 canvas {
