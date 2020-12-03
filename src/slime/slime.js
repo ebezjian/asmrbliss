@@ -33,7 +33,7 @@ let y = 0;
 const mouse = {
   x: null,
   y: null,
-  radius: 75
+  radius: 100
 };
 
 canvas.addEventListener('mousedown', function (event) {
