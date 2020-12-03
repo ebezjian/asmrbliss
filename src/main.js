@@ -2,29 +2,21 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import nav from './assets/audio/nav.mp3'
 
+let audio = new Audio(nav);
 
 $('#mainPage').on("click", function () {
   window.location.href = "index.html";
 });
 
-
-$('#aboutPage').on("click", function () {
-  window.location.href = "aboutUs.html";
+$('#mainPage').mouseenter(function() { 
+  audio.play(); 
 });
 
-$('#mukbangPage').on("click", function () {
-  window.location.href = "mukbang.html";
+$('.wrapper').mouseover(function() { 
+  audio.play(); 
 });
-
-$('#mukbangPage').on("click", function () {
-  window.location.href = "mukbang.html";
-});
-
-$('#slimePages').on("click", function () {
-  window.location.href = "slime.html";
-});
-
 
 $(document).on('mouseover', '.container .column', function () {
   $(this).addClass('active').siblings().removeClass('active');

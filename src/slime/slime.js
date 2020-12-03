@@ -65,27 +65,19 @@ window.addEventListener('mouseup', function () {
   }
 });
 
-// ctx.fillStyle = 'white'; // text will be back unless you set
-// ctx.font = '30px Verdana'; //size, font-fmaily
-// ctx.fillText('A', 0, 30); //text we want to write, x coordinate, y coordinate, max width of pixels
-
-//ctx.strokeStyle = 'white'; // White line for box
-//ctx.strokeRect(0, 0, 100, 100); //same coordinates as getImageData to see what we are scanning
-
-// const data = ctx.getImageData(0, 0, 100, 100);
-
 class Particle {
-  constructor(x, y) {
+  constructor(x, y, color) {
     this.x = x;
     this.y = y;
-    this.size = 3;
+    this.size = 5;
     this.baseX = this.x;
     this.baseY = this.y;
     this.density = (Math.random() * 40) + 5;
+    this.color = color;
   }
 
   draw() {
-    ctx.fillStyle = 'teal';
+    ctx.fillStyle = this.color;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
@@ -119,15 +111,18 @@ class Particle {
     }
   }
 }
+
 function init() {
   particleArray = [];
   for (let i = 0; i < 15000; i++) {
+    let random = Math.floor(Math.random() * Math.floor(5));
+    let colorArray = ['coral', 'gold', 'blueviolet', 'aqua', 'magenta']
+    let color = colorArray[random];
     let x = Math.random() * canvas.width;
     let y = Math.random() * canvas.height;
-    particleArray.push(new Particle(x, y));
+    particleArray.push(new Particle(x, y, color));
   }
 }
-
 init();
 
 function animate() {

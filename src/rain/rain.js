@@ -8,30 +8,23 @@ let vRain = [];
 let audio = new Audio(rain);
 audio.loop = true;
 
-// let audio = window.onload = function() {
-//   document.getElementById("").play();
-// }
-
 class Rain {
-  constructor(x, y, v, l,) { // coordinates, length, velocity.
+  constructor(x, y, v, l,) { 
     this.x = x;
     this.y = y;
     this.v = v;
     this.l = l;
   }
-  show() { //Draw
+  show() { 
     ctx.strokeStyle = 'white';
     ctx.beginPath();
-    ctx.moveTo(this.x, this.y); //start droplets
-    ctx.lineTo(this.x, this.y + this.l); //end of droplets
+    ctx.moveTo(this.x, this.y); 
+    ctx.lineTo(this.x, this.y + this.l); 
     ctx.stroke();
   }
 
-  // gravity
   fall() {
     this.y += this.v;
-
-    //recreate if droplet hits the ground
     if (this.y > c.height) {
       this.x = Math.floor(Math.random() * c.width) + 5;
       this.y = Math.floor(Math.random() * 100) - 100;
@@ -42,9 +35,7 @@ class Rain {
 
 }
 function loop() {
-
   ctx.clearRect(0, 0, c.width, c.height);
-
   for (var i = 0; i < vRain.length; i++) {
     vRain[i].show();
     vRain[i].fall();
@@ -60,7 +51,7 @@ function setup() {
       Math.floor(Math.random() * 12) + 4,
     );
   }
-  setInterval(loop, 10);
+  setInterval(loop, 7);
 }
 setup();
 audio.play();
