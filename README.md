@@ -6,16 +6,27 @@
 
 ## Description
 
+<p align="center">
+
 ![Home Page](https://media.giphy.com/media/htTOGrkU6FpYbW4LqS/giphy.gif)
+
+</p>
 
 _This is our project for Epicodus' final week of Javascript: Team Week. The goal with this project is to have a page with a slime theme that allows the user to click on it and cause relaxing slime sounds to play as well as show an animation for the movement of the slime, with other themes possibly in the workings._
 
-_MVP: Have a single page with a slime theme that allows the user to click it and drag for a plesant sound and animation effect._
+_**MVP:** Have a single page with a slime theme that allows the user to click it and drag for a plesant sound and animation effect._
 
-_Stretch goals:_
-_1.) Have more than one theme, such as rainwater, mukbang playlist, About Us page
-\_2.) Have every aspect of the webpage have sound when interacted with (ex navbar)_
+![slime](https://media.giphy.com/media/APZHwaaobTPjq2peE7/giphy.gif#center)
+![rain](https://media.giphy.com/media/8PPf79gZnBcklns5DM/giphy.gif#center)
+
+**_Stretch goals:_**
+
+_1.) Have more than one theme, such as rainwater, mukbang playlist, About Us page._
+
+_2.) Have every aspect of the webpage have sound when interacted with (ex navbar)_
+
 _3.) World Domination._
+
 _4.) Buy Amazon button the cuts to partying with Tom Haverford._
 
 ## Setup
